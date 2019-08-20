@@ -2,6 +2,8 @@
 
 A simple PHP library to get dealer listings
 
+[See API Docs](https://jinjie.github.io/sgcarmart-api)
+
 ## Install
 
 `composer install jinjie/sgcarmart-api`
