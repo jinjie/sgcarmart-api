@@ -344,8 +344,8 @@ class CarDetail extends Response
      */
     public function getCurbWeight()
     {
-        return is_object($curb_weight = $this->getData()->car->curb_weight) ?
+        return is_object($curbweight = $this->getData()->car->curbweight) ?
             false :
-            $curb_weight;
+            $curbweight;
     }
 }
