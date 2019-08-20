@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * Response
+ *
+ * @package SwiftDevLabs\SgCarMart
+ * @author Kong Jin Jie <jinjie@swiftdev.sg>
+ */
+
+namespace SwiftDevLabs\SgCarMart;
+
+class Response
+{
+    protected $response = null;
+
+    protected $data = null;
+
+    public function __construct($response)
+    {
+        $this->data = $this->xmlToJson($response->getBody());
+
+        return $this;
+    }
+
+    public function getData()
+    {
+        return $this->data;
+    }
+
+    /**
+     * Convert XML string to JSON
+     * @param  string $xmlString XML String
+     * @return object            JSON
+     */
+    private function xmlToJson($xmlString)
+    {
+        return json_decode(json_encode(
+            simplexml_load_string(
+                $xmlString,
+                'SimpleXMLElement',
+                LIBXML_NOCDATA
+            )
+        ));
+    }
+}
+
