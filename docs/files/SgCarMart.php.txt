@@ -44,7 +44,8 @@ class SgCarMart
 
     /**
      * Get Listings
-     * @return object JSON Object
+     *
+     * @return array Array of cars object
      */
     public function getListings()
     {
